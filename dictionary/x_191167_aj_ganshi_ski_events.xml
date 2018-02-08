@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="ski_events" max_length="40" name="x_191167_aj_ganshi_ski_events" type="collection"/>
+    <element extends="task" label="ski_events" max_length="40" name="x_191167_aj_ganshi_ski_events" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="SKI" label="Event Type" max_length="40" name="u_event_type" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="No" label="Do you have license" mandatory="true" max_length="40" name="u_is_license" type="string">
+            <choice>
+                <element label="Yes" sequence="0" value="yes"/>
+                <element label="No" sequence="1" value="No"/>
+            </choice>
+        </element>
+        <element label="Request for" max_length="32" name="u_request_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="L" label="Shoes size" mandatory="true" max_length="40" name="u_ski_shoes_size" type="string">
+            <choice>
+                <element label="LL" sequence="0" value="LL"/>
+                <element label="L" sequence="1" value="L"/>
+                <element label="M" sequence="2" value="M"/>
+                <element label="S" sequence="3" value="S"/>
+                <element label="XS" sequence="4" value="XS"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="ski" label="SKI or Snow board" mandatory="true" max_length="40" name="u_ski_type" type="string">
+            <choice>
+                <element label="SKI" sequence="0" value="ski"/>
+                <element label="Snow board" sequence="1" value="sb"/>
+                <element label="Others" sequence="2" value="others"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="L" label="Ski Ware size" mandatory="true" max_length="40" name="u_ski_ware_size" type="string">
+            <choice>
+                <element label="LL" sequence="0" value="LL"/>
+                <element label="L" sequence="1" value="L"/>
+                <element label="M" sequence="2" value="M"/>
+                <element label="S" sequence="3" value="S"/>
+                <element label="XS" sequence="4" value="XS"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="New String" max_length="40" name="u_string_4" type="string"/>
+    </element>
 </database>
